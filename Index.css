@@ -1,0 +1,33 @@
+.board {
+    display: inline-grid;
+    padding: 10px;
+    grid-template-columns: repeat(var(--column), var(--tile-size));
+    grid-template-rows: repeat(var(--row), var(--tile-size));
+    background-color: #777;
+}
+  
+.board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    user-select: none;
+}
+
+.board > [data-status = "closed"] {
+    background-image: url("Assets/closed.svg");
+}
+
+.board > [data-status = "skimmed"] {
+    background-image: url("Assets/type0.svg");
+}
+  
+.board > [data-status = "mine"] {
+    background-image: url("Assets/mine.svg");
+}
+  
+.board > [data-status = "flagged"] {
+    background-image: url("Assets/flag.svg");
+}

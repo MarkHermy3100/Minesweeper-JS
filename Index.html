@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
+    <title>Minesweeper</title>
+</head>
+<body>
+    <h3 class="title">Minesweeper</h3>
+    <select name="modes" id="modes">
+        <option value="beginner">Beginner (10x10/10)</option>
+        <option value="intermediate">Intermediate (16x16/40)</option>
+        <option value="expert">Expert (30x16/99)</option>
+        <option value="custom">Custom</option>
+    </select>
+    <br>
+    <label for="width">Width:</label>
+    <input type="text" size="4" id="width" value="10">
+    <label for="height">Height:</label>
+    <input type="text" size="4" id="height" value="10">
+    <label for="mines">Mines:</label>
+    <input type="text" size="4" id="mines" value="10">
+    <button onclick="resetBoard();">Submit</button>
+    <button onclick="resetBot();">Start Bot</button>
+    <div class="subtext">
+        Mines Left: <span data-mine-count></span>
+    </div>
+    <div class="board"></div>
+    <script src="Index.js"></script>
+    <script src="Bot.js"></script>
+    <!-- <script>
+        function startWorker() {
+          var w;
+            if(typeof(Worker) !== "undefined") {
+                if(typeof(w) == "undefined") {
+    w = new Worker("src/RunBot.js");
+}
+}
+}
+
+function stopWorker() { 
+  w.terminate();
+  w = undefined;
+}
+    </script> -->
+    
+</body>
+</html>
